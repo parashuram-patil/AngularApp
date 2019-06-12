@@ -8,7 +8,7 @@
               <th>Employee Id</th>
           </tr>
           <tr *ngFor = "let emp of empList">
-              <td>{{emp}}</td>
+              <td><span (click) = "sendInfo($event)">{{emp}}</span></td>
               <td>75022392</td>
             </tr>
         </table>

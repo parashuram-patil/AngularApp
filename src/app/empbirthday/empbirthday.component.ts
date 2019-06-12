@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService, EmplyeeDetilsMessage } from '../employee.service';
 
 @Component({
   selector: 'app-empbirthday',
@@ -10,6 +10,8 @@ export class EmpbirthdayComponent implements OnInit {
 
   empList = [];
   version = "";
+  msg:EmplyeeDetilsMessage;
+  finalMessage = "No Message yet.";
 
   constructor(public empService: EmployeeService) { }
 
@@ -20,6 +22,15 @@ export class EmpbirthdayComponent implements OnInit {
       console.log(result);
       this.version = result.version
     });
+
+    this.empService.getSuscriber().subscribe(result => {
+      this.msg = result;
+      this.setMessage();
+    });
+  }
+
+  setMessage() {
+    this.finalMessage = "Message From " + this.msg.name + ": " + this.msg.message;
   }
 
 }
