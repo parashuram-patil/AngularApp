@@ -1,0 +1,18 @@
+<div class="col-md-5">
+    <div class = "panel panel-primary">
+      <div class = "panel-heading">Upcoming Birthdays</div>
+      <div class = "panel-body">
+          <table class = "table table-striped table-bordered">
+              <tr>
+                  <th>Employee Name</th>
+                  <th>Birthdays</th>
+              </tr>
+              <tr *ngFor = "let emp of empList">
+                  <td>{{emp}}</td>
+                  <td>20-Jun-1990</td>
+                </tr>
+            </table>
+      </div>
+      <div class = "panel-footer" align = right>Copyright {{version}}</div>
+    </div>
+  </div>

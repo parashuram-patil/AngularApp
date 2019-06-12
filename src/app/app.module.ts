@@ -6,6 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeadernavComponent } from './headernav/headernav.component';
 import { MainComponent } from './main/main.component';
+import { EmpbirthdayComponent } from './empbirthday/empbirthday.component';
+import { EmprankingComponent } from './empranking/empranking.component';
+import { EmpdetailsComponent } from './empdetails/empdetails.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { MainComponent } from './main/main.component';
     HeaderComponent,
     FooterComponent,
     HeadernavComponent,
-    MainComponent
+    MainComponent,
+    EmpbirthdayComponent,
+    EmprankingComponent,
+    EmpdetailsComponent
   ],
   imports: [
     BrowserModule
