@@ -21,7 +21,10 @@
       [ngClass]="{'active': menuItem.active}"
       (click)="handleMenuClick($event)"
       > 
-      <a href="#" id="{{menuItem.label}}">{{menuItem.label}}</a>
+      <!---<a href="{{menuItem.link}}" id="{{menuItem.label}}">{{menuItem.label}}</a>-->
+      <a [routerLink]="[menuItem.link]"
+               routerLinkActive="router-link-active"
+               id="{{menuItem.label}}">{{menuItem.label}}</a>   
       </li>
       <!--- <li class="active"><a href="#">Home</a></li>
       <li><a href="#">Page 1</a></li>
