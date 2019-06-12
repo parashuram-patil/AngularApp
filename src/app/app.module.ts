@@ -14,6 +14,7 @@ import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { Opps404Component } from './opps404/opps404.component';
 
 const routes: Routes = [
+  {path: '', component: EmpbirthdayComponent},
   {path: 'home', component: EmpbirthdayComponent},
   {path: 'movies', component: EmprankingComponent},
   {path: 'search', component: EmpdetailsComponent},
