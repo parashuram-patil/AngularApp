@@ -11,11 +11,13 @@ import { MainComponent } from './main/main.component';
 import { EmpbirthdayComponent } from './empbirthday/empbirthday.component';
 import { EmprankingComponent } from './empranking/empranking.component';
 import { EmpdetailsComponent } from './empdetails/empdetails.component';
+import { Opps404Component } from './opps404/opps404.component';
 
 const routes: Routes = [
   {path: 'home', component: EmpbirthdayComponent},
   {path: 'movies', component: EmprankingComponent},
-  {path: 'search', component: EmpdetailsComponent}
+  {path: 'search', component: EmpdetailsComponent},
+  {path: '**', component: Opps404Component}
 ]
 
 @NgModule({
@@ -27,7 +29,8 @@ const routes: Routes = [
     MainComponent,
     EmpbirthdayComponent,
     EmprankingComponent,
-    EmpdetailsComponent
+    EmpdetailsComponent,
+    Opps404Component
   ],
   imports: [
     BrowserModule, //DOM works coz of this
