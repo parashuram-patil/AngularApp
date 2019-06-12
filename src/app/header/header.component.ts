@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+menuItems = [
+  {label: "Home", link: "home", active: true},
+  {label: "Movies", link: "Movies", active: false},
+  {label: "Search", link: "Search", active: false},
+  {label: "About", link: "About", active: false}
+]
+
   constructor() { }
 
   ngOnInit() {
