@@ -19,4 +19,15 @@ menuItems = [
   ngOnInit() {
   }
 
+  handleMenuClick(evt) {
+    this.menuItems.forEach(each => {
+      if(each.label == evt.target.id) {
+        each.active = true;
+      }
+      else {
+        each.active = false
+      }
+    })
+  }
+
 }
