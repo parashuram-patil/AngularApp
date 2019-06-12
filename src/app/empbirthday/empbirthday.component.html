@@ -8,7 +8,7 @@
                   <th>Birthdays</th>
               </tr>
               <tr *ngFor = "let emp of empList">
-                  <td>{{emp}}</td>
+                  <td>{{emp | uppercase}}</td>
                   <td>20-Jun-1990</td>
                 </tr>
             </table>
