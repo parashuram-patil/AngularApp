@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +16,7 @@ menuItems = [
   {label:"About" , link:'about' , active:false}
 ]
 
-  constructor() { }
+  constructor(public app:AppComponent) { }
 
   ngOnInit() {
   }
@@ -28,6 +30,13 @@ menuItems = [
         each.active = false
       }
     })
+  }
+
+  doLogOut() {
+    console.log("Doing logout");
+    //this.login.doLogout();
+    sessionStorage.removeItem("loggedIn");
+    this.app.loggedIn = false;
   }
 
 }
