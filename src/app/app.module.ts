@@ -12,6 +12,7 @@ import { EmpbirthdayComponent } from './empbirthday/empbirthday.component';
 import { EmprankingComponent } from './empranking/empranking.component';
 import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { Opps404Component } from './opps404/opps404.component';
+import { StorageComponent } from './storage/storage.component';
 
 const routes: Routes = [
   {path: '', component: EmpbirthdayComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
     EmpbirthdayComponent,
     EmprankingComponent,
     EmpdetailsComponent,
-    Opps404Component
+    Opps404Component,
+    StorageComponent
   ],
   imports: [
     BrowserModule, //DOM works coz of this
