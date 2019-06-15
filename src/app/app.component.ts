@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,17 @@ export class AppComponent implements OnInit{
   
   title = 'AngularApp';
   loggedIn = false;
+
+  constructor(public loginService: LoginService) { }
   
   ngOnInit() {
+
     if(sessionStorage.getItem("loggedIn") == 'yes'){
       this.loggedIn = true;
     }
+
+    this.loginService.getLoginSubscriber().subscribe(result => {
+      this.loggedIn = result.loggedIn;
+    });
   }
 }

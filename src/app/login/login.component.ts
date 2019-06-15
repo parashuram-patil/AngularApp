@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
-import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,20 +11,16 @@ export class LoginComponent implements OnInit {
   userName;
   password;
 
-  constructor(public app:AppComponent) { }
+  constructor(public loginService: LoginService){ }
 
   ngOnInit() {
   }
 
   doLogin() {
-    console.log("Doing login")
+    console.log("Doing login with userName: " + this.userName + " and password:" + this.password);
     sessionStorage.setItem('loggedIn', 'yes');
-    this.app.loggedIn = true;
+    this.loginService.getLoginPublisher().next({
+      loggedIn: true
+    });
   }
-
-  doLogout() {
-    //sessionStorage.removeItem('loggedIn');
-    //this.app.loggedIn = false;
-  }
-
 }

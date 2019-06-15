@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
-import { AppComponent } from '../app.component';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +15,7 @@ menuItems = [
   {label:"About" , link:'about' , active:false}
 ]
 
-  constructor(public app:AppComponent) { }
+  constructor(public loginService: LoginService) { }
 
   ngOnInit() {
   }
@@ -34,9 +33,10 @@ menuItems = [
 
   doLogOut() {
     console.log("Doing logout");
-    //this.login.doLogout();
     sessionStorage.removeItem("loggedIn");
-    this.app.loggedIn = false;
+    this.loginService.getLoginPublisher().next({
+      loggedIn: false
+    });
   }
 
 }
