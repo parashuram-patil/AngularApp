@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ menuItems = [
   {label:"About" , link:'about' , active:false}
 ]
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService, public router: Router) { }
 
   ngOnInit() {
   }
@@ -37,6 +38,7 @@ menuItems = [
     this.loginService.getLoginPublisher().next({
       loggedIn: false
     });
+    this.router.navigate(['login']);
   }
 
 }

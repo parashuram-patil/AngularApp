@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   userName;
   password;
 
-  constructor(public loginService: LoginService){ }
+  constructor(public loginService: LoginService, public router: Router){ }
 
   ngOnInit() {
   }
@@ -22,5 +23,6 @@ export class LoginComponent implements OnInit {
     this.loginService.getLoginPublisher().next({
       loggedIn: true
     });
+    this.router.navigate(['home']);
   }
 }
