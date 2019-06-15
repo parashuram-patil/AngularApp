@@ -15,11 +15,17 @@ export class LoginComponent implements OnInit {
   constructor(public loginService: LoginService, public router: Router){ }
 
   ngOnInit() {
+    this.loginService.getLoginPublisher().next({
+      loggedIn: false
+    });
+    sessionStorage.removeItem('loggedIn');
+    sessionStorage.removeItem('loginToken');
   }
 
   doLogin() {
     console.log("Doing login with userName: " + this.userName + " and password:" + this.password);
     sessionStorage.setItem('loggedIn', 'yes');
+    sessionStorage.setItem("loginToken", btoa(this.userName + ":" + this.password));
     this.loginService.getLoginPublisher().next({
       loggedIn: true
     });
