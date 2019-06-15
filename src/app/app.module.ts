@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'home', component: EmpbirthdayComponent},
   {path: 'movies', component: EmprankingComponent},
   {path: 'search', component: EmpdetailsComponent},
+  {path: 'login', component: LoginComponent},
   {path: '**', component: Opps404Component}
 ]
 
@@ -40,6 +42,7 @@ const routes: Routes = [
   imports: [
     BrowserModule, //DOM works coz of this
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
