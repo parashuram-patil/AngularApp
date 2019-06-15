@@ -15,12 +15,13 @@ import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { Opps404Component } from './opps404/opps404.component';
 import { StorageComponent } from './storage/storage.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path: '', component: EmpbirthdayComponent},
-  {path: 'home', component: EmpbirthdayComponent},
-  {path: 'movies', component: EmprankingComponent},
-  {path: 'search', component: EmpdetailsComponent},
+  {path: '', component: EmpbirthdayComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: EmpbirthdayComponent, canActivate: [AuthGuard]},
+  {path: 'movies', component: EmprankingComponent, canActivate: [AuthGuard]},
+  {path: 'search', component: EmpdetailsComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: '**', component: Opps404Component}
 ]

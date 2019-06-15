@@ -35,6 +35,7 @@ menuItems = [
   doLogOut() {
     console.log("Doing logout");
     sessionStorage.removeItem("loggedIn");
+    sessionStorage.removeItem('loginToken');
     this.loginService.getLoginPublisher().next({
       loggedIn: false
     });
