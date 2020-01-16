@@ -31,6 +31,7 @@ export class EmpbirthdayComponent implements OnInit {
 
   setMessage() {
     this.finalMessage = "Message From " + this.msg.name + ": " + this.msg.message;
+    console.log("*** Message Recieved : + " + this.finalMessage)
   }
 
 }
