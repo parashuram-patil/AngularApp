@@ -22,6 +22,8 @@
     "@angular/router": "^8.2.14",
     "bootstrap": "^3.4.1",
     "core-js": "^2.5.4",
+    "devextreme": "^19.2.5",
+    "devextreme-angular": "^19.2.5",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

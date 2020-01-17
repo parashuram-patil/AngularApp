@@ -4,3 +4,12 @@
     font-style: italic;
     position: fixed;
 }
+
+.arrange-vertically > * {
+    display: block;
+}
+
+.arrange-horizontally > * {
+    display: inline-block;
+    text-align: center;
+}

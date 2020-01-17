@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,6 +17,8 @@ import { Opps404Component } from './opps404/opps404.component';
 import { StorageComponent } from './storage/storage.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { DevexpressComponent } from './devexpress/devexpress.component';
+import { DxDataGridModule, DevExtremeModule } from 'devextreme-angular';
 
 const routes: Routes = [
   {path: '', component: EmpbirthdayComponent, canActivate: [AuthGuard]},
@@ -38,15 +41,20 @@ const routes: Routes = [
     EmpdetailsComponent,
     Opps404Component,
     StorageComponent,
-    LoginComponent
+    LoginComponent,
+    DevexpressComponent
   ],
   imports: [
     BrowserModule, //DOM works coz of this
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    DxDataGridModule,
+    DevExtremeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
